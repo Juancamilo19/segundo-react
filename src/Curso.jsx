@@ -1,31 +1,41 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-const Curso = () => (
+const mayorDeEdad = edad => edad > 18
 
-    <article className="card">
-  <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
-    <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20210119225559/React-Developer-Tools.png" alt="Poster del curso" />
-  </div>
-  <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
-    <h3 className="t5 s-mb-2 s-center">
-      Programación orientada a objetos con Go
-    </h3>
-    <div className="s-mb-2 s-main-center">
-      <div className="card__teacher s-cross-center">
-        <div className="card__avatar s-mr-1">
-          <div className="circle img-container">
-            <img src="https://www.etitulo.com/wp-content/uploads/2018/12/profesor.jpg" alt="profesor" />
-          </div>
-        </div>
-        <span className="small">Alexys Lozada</span>
-      </div>
+const Curso = ({title, image, price,profesor}) => (
+
+<article className="card">
+    <div className="img-container s-ratio-16-9 s-radius-tr s-radius-tl">
+    <img 
+    src={image} alt={title} 
+    />
     </div>
-    <div className="s-main-center">
-      <a className="button--ghost-alert button--tiny" href="#">$ 20USD</a>
+    <div className="card__data s-border s-radius-br s-radius-bl s-pxy-2">
+        <h3 className="center">{title}</h3> 
+        <div className="s-main-center">
+          {`${profesor}`}
+        </div>
+        <div className="s-main-center">
+      <a className="button--ghost-alert button--tiny" href="#">{`${price}`}</a>
     </div>
   </div>
 </article>
 
 )
 
-export default Curso
+Curso.propTypes = {
+  title: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.number,
+  profesor: PropTypes.string
+}
+
+Curso.defaultProps = {
+  title: "No se encontro titulo",
+  image: "https://previews.123rf.com/images/rabbit75123/rabbit751231210/rabbit75123121000088/15669808-new-york-city-manhattan-skyline-vista-a%C3%A9rea-blanco-y-negro-con-los-rascacielos-y-las-calles-.jpg",
+  price: "--",
+  profesor: ""
+}
+
+export default Curso 
