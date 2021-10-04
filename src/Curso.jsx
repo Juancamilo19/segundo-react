@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const mayorDeEdad = edad => edad > 18
+// const mayorDeEdad = edad => edad > 18
 
 const Curso = ({title, image, price,profesor}) => (
 
@@ -17,7 +17,7 @@ const Curso = ({title, image, price,profesor}) => (
           {`${profesor}`}
         </div>
         <div className="s-main-center">
-      <a className="button--ghost-alert button--tiny" href="#">{`${price}`}</a>
+      <a className="button--ghost-alert button--tiny" href="https://ed.team">{`${price}`}</a>
     </div>
   </div>
 </article>
